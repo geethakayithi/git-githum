@@ -1,0 +1,34 @@
+  <title>JS Bin</title>
+</head>
+<body>
+  <input  />
+  <ul id=addrBook>
+    
+  </ul>
+<script id="jsbin-javascript">
+class addressBook{
+  constructor(){
+    this.bookList =[];
+  }
+  add(name,phno){
+    this.bookList.push({name:name,phno:phno})
+    const addrBookBody = document.getElementById('addrBook')
+    const nuList = document.createElement('li')
+    const nuListText = document.createTextNode(`${name} : ${phno}`)
+    nuList.appendChild(nuListText)
+    addrBookBody.appendChild(nuList)
+  }
+  search(name){
+    console.log(this.bookList.filter((a)=> {return a.name === name; }))
+  }
+  print(){
+    console.log(this.bookList)
+  }
+}
+var nuAdrBook =new addressBook;
+nuAdrBook.add('geetha',90909090);
+nuAdrBook.add('Swathi',430909090);
+nuAdrBook.add('Santoshi',5519869098);
+// nuAdrBook.print()
+nuAdrBook.search('Geetha')
+</script>
